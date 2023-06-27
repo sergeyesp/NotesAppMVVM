@@ -29,6 +29,7 @@ import com.example.notesappmvvm.MainViewModelFactory
 import com.example.notesappmvvm.model.Note
 import com.example.notesappmvvm.navigation.NavRoute
 import com.example.notesappmvvm.ui.theme.NotesAppMVVMTheme
+import com.example.notesappmvvm.utils.Constants
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -43,7 +44,7 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
             ) {
                 Icon(
                     imageVector = Icons.Filled.Add,
-                    contentDescription = "Add",
+                    contentDescription = Constants.Keys.ADD,
                     tint = Color.White
                 )
             }
@@ -64,7 +65,7 @@ fun NoteItem(note: Note, navController: NavHostController) {
             .fillMaxWidth()
             .padding(vertical = 8.dp, horizontal = 24.dp)
             .clickable {
-                navController.navigate(NavRoute.Note.route)
+                navController.navigate(NavRoute.Note.route + "/${note.id}")
             },
         elevation = 6.dp
     ){

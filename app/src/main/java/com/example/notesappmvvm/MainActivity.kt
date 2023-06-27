@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.notesappmvvm.navigation.NotesNavHost
 import com.example.notesappmvvm.ui.theme.NotesAppMVVMTheme
+import com.example.notesappmvvm.utils.Constants
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     topBar = {
                         TopAppBar(
                             title = {
-                                Text(text = "Notes App")
+                                Text(text = Constants.Keys.NOTES_APP)
                             },
                             backgroundColor = Color.Blue,
                             contentColor = Color.White,
