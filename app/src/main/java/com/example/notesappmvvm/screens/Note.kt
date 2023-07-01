@@ -113,6 +113,7 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
                         )
                     }
                 }
+                Spacer(modifier = Modifier.padding(vertical = 164.dp))
                 Row(
                     modifier = Modifier
                         .padding(horizontal = 32.dp)
@@ -144,7 +145,7 @@ fun NoteScreen(navController: NavHostController, viewModel: MainViewModel, noteI
                 Button(
                     modifier = Modifier
                         .padding(top = 16.dp)
-                        .padding(horizontal = 32.dp)
+                        .padding(horizontal = 64.dp)
                         .fillMaxWidth(),
                     onClick = {
                         navController.navigate(NavRoute.Main.route)
