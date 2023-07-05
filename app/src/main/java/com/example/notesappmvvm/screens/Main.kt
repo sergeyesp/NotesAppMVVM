@@ -63,7 +63,7 @@ fun MainScreen(navController: NavHostController, viewModel: MainViewModel) {
 
 @Composable
 fun NoteItem(note: Note, navController: NavHostController) {
-    val noteId = when(DB_TYPE) {
+    val noteId = when(DB_TYPE.value) {
         TYPE_FIREBASE -> note.firebaseId
         TYPE_ROOM -> note.id
         else -> Constants.Keys.EMPTY
@@ -89,7 +89,7 @@ fun NoteItem(note: Note, navController: NavHostController) {
 
 @Preview(showBackground = true)
 @Composable
-fun prevMainScreen() {
+fun PrevMainScreen() {
     NotesAppMVVMTheme {
         val context = LocalContext.current
         val mViewModel: MainViewModel =

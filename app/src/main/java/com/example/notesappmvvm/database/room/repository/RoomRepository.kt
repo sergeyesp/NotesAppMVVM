@@ -5,7 +5,7 @@ import com.example.notesappmvvm.database.DatabaseRepository
 import com.example.notesappmvvm.database.room.dao.NoteRoomDao
 import com.example.notesappmvvm.model.Note
 
-class RoomRepository(private val noteRoomDao: NoteRoomDao): DatabaseRepository {
+class RoomRepository(private val noteRoomDao: NoteRoomDao) : DatabaseRepository {
     override val readAll: LiveData<List<Note>>
         get() = noteRoomDao.getAllNotes()
 
@@ -24,4 +24,5 @@ class RoomRepository(private val noteRoomDao: NoteRoomDao): DatabaseRepository {
         onSuccess()
     }
 
+    override fun signOut() {}
 }

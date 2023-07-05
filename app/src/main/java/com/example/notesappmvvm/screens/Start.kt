@@ -66,7 +66,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                             LOGIN = login
                             PASSWORD = password
                             viewModel.initDataBase(TYPE_FIREBASE) {
-                                DB_TYPE = TYPE_FIREBASE
+                                DB_TYPE.value = TYPE_FIREBASE
                                 navController.navigate(NavRoute.Main.route)
                             }
                         },
@@ -94,7 +94,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
                 Button(
                     onClick = {
                         viewModel.initDataBase(TYPE_ROOM) {
-                            DB_TYPE = TYPE_ROOM
+                            DB_TYPE.value = TYPE_ROOM
                             navController.navigate(route = NavRoute.Main.route)
                         }
                     },
@@ -123,7 +123,7 @@ fun StartScreen(navController: NavHostController, viewModel: MainViewModel) {
 
 @Preview(showBackground = true)
 @Composable
-fun prevStartScreen() {
+fun PrevStartScreen() {
     NotesAppMVVMTheme {
         val context = LocalContext.current
         val mViewModel: MainViewModel =
